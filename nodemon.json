@@ -1,0 +1,8 @@
+{
+  "env": {
+    "MONGO_USER": "admin",
+    "MONGO_PASSWORD": "JuVnT3wW21uxqSro",
+    "MONGO_DB": "fineTeacher",
+    "SECRET_KEY": "siunix"
+  }
+}
