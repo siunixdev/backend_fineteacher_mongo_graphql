@@ -18,12 +18,14 @@ type Category {
 
 type User {
   _id:ID!
+  fullname: String!
   email: String!
   password: String!
   createdCourse: [Course!]
 }
 
 type AuthData {
+  message: String!
   userId: ID!
   token: String!
   tokenExpiration: Int!
@@ -46,6 +48,7 @@ input CategoryInput {
 }
 
 input UserInput {
+  fullname: String!
   email: String!
   password: String!
 }
@@ -70,7 +73,7 @@ type RootQuery {
 
 type RootMutation {
   createCategory(categoryInput : CategoryInput): Category
-  signUp(userInput : UserInput): User
+  signUp(userInput : UserInput): AuthData!
   createCourse(courseInput : CourseInput): Course
   joinCourse(courseId: ID!): JoinCourse!
   cancelJoinCourse(joinCourseId: ID!): Course!
